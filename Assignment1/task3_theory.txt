@@ -1,0 +1,14 @@
+Why do you think showInfo can print Y before it is assigned? 
+I think it has something to do with the thread clause. 
+Since the variable Y is not declared yet, the thread has to wait. 
+It is then notified when Y in initialized, and then it runs, displaying the data.
+
+Why is this behaviour useful? 
+Maybe because threads use less memory? Not sure
+
+What does the statement Y = X do?
+From what I've read, I think that each variable points to an array of memory
+called a node. The operation Y = X attempts to merge their respective nodes. 
+Since Y is unbounded, merging in this case means that all references to the 
+Y node is replaced by a reference to X (the original node of Y is prectically
+discarded).
