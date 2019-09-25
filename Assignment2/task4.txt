@@ -1,0 +1,23 @@
+a) 
+<statement> ::= ε
+            |   <number> <statement>
+            |   <number> <number> <operator> <statement>
+            |   <number> <cmd> <statement>
+
+<operator>  ::= + | - | / | *
+
+<cmd>       ::= p | d | i | ^ 
+
+
+
+b) Not really sure how to use (E)BNF, but i guess the grammar would not be ambiguous because there aren't any 
+duplicate rules, so it would not be able to generate a string for which there are more than one parse tree.
+
+c) A context-sensitive grammar is a grammar where each production is on the form wAx->wyx, and it has a rule which 
+says that A may be replaced by the string y if it is in the "context" of w and x (dependency). 
+In a context-free grammar (A -> w), on the other hand, there are no restriction on what productions the non-terminals can 
+expand to, and therefore all possible strings in the langage can be generated. 
+
+d) This happens because float and int are not of the same type. This can be useful when debugging and it helps prevent errors
+related to type mismatch. It can also help make your grammar less ambiguous when defining rules. 
+
