@@ -1,0 +1,8 @@
+Task 3 
+The first three digits are 100.
+The benefits of running two separate threads is that 
+
+Task 4 
+In lazy evaluation, a statement is only executed when its result is needed somewhere else in the programs.
+In our case (task 3), this means that thread list = {LazyGenerateOdd ...} end creates what's called a "stopped exectution"
+for each element in the list that will only be accessed when needed. Throughput and resource usage? See chapter 4.4.3 for explenation
