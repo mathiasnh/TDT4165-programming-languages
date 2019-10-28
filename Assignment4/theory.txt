@@ -1,8 +1,15 @@
 Task 3 
 The first three digits are 100.
-The benefits of running two separate threads is that 
+The benefits of running two separate threads is that it lets the CPU compute multiple calculations at the same time, improving performance
+harmlessly by use of parallelism. It also prevents race conditions and lock outs.  
 
 Task 4 
-In lazy evaluation, a statement is only executed when its result is needed somewhere else in the programs.
-In our case (task 3), this means that thread list = {LazyGenerateOdd ...} end creates what's called a "stopped exectution"
-for each element in the list that will only be accessed when needed. Throughput and resource usage? See chapter 4.4.3 for explenation
+In lazy evaluation, a statement is only executed when its result is needed somewhere else in the program.
+In our case (task 3), this means that `thread list = {LazyGenerateOdd ...} end` creates what's called a "stopped exectution"
+for each element in the list that will only be accessed when needed. Without being lazy, GenerateOdd would be free to 
+use as many resources as it possibly can, and there is no restriction on how far ahead of the consumer (Product) 
+it could go. This would cause high resource usage. 
+When we make GenerateOdd lazy, it is completely restricted by its consumer (Product), and is not able to generate anything 
+without explisit requests. This means low resource usage and improved throughput (flow control).
+
+
