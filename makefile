@@ -11,5 +11,8 @@ run3:
 run4: 
 	ozc -c Assignment4/$(file).oz && ozengine $(file).ozf && rm $(file).ozf
 
+run6: 
+	ozc -c Assignment6/$(file).oz && ozengine $(file).ozf && rm $(file).ozf
+
 rand: 
 	ozc -c Test/$(file).oz && ozengine $(file).ozf && rm $(file).ozf

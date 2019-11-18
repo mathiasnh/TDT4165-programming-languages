@@ -138,6 +138,7 @@ object Hello extends App {
 			Await.result(result, 1.minute)
 		}
 	}
+	DeadlockScenario.run()
 
 
 } 
