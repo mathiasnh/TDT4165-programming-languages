@@ -1,0 +1,7 @@
+payment(0,[]).                                              %if the amount to pay is 0, no coins are needed
+payment(Sum, [coin(Needed, Value, Available)|Tail]) :-      %else, pattern match to get required variables from coin record
+        Needed in 0..Available,                             %constraint - the needed amount for each specific coin cannot exceed the amount available
+        Sum #= Value*Needed + TailSum,                      %constraint - the cumulative total for amount of each coin times its value must be equal to the required payment.
+    								                            %TailSum is the recursive relation to the subtotal of rest of the list of coins
+        payment(TailSum, Tail).                             %constraint - the sum of the tail must be equal to the cumulative total for each coin in the tail times its value.
+								                                %alternatively, if the constrains are to hold true for the entire list, they must also hold true for every sub-version of the list.

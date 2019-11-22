@@ -1,11 +1,3 @@
-fun {Digit}
-    choice 0 [] 1 [] 2 [] 3 [] 4 [] 5 [] 6 [] 7 [] 8 [] 9 end
-end
-fun {TwoDigit}
-    10*{Digit}+{Digit}
-end
-
-
 % The relation class implemented in section 9.6
 class RelationClass
     attr d
